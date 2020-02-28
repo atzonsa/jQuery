@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>X-Axis & Y-Axis</title>
+</head>
+
+<body>
+
+<div class="mysection"></div>
+
+<style>
+body
+{
+    background-color: lightgray;
+}
+
+.mysection
+{
+    color: white;
+    font-size: xx-large;
+    background-color: blueviolet;
+    width: 500px;
+}
+
+</style>
+<script
+			  src="https://code.jquery.com/jquery-3.4.1.js"
+			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+              crossorigin="anonymous"></script>
+              <script>
+
+                $(document).ready(function() {
+                    $(document).mousemove(function(e) {
+                        $('.mysection').html("x axis is : " + e.pageX + " & y axis is : " + e.pageY);
+                    });
+                });
+            
+            </script>
+</body>
+</html>
