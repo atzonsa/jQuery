@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Content Shift</title>
+</head>
+
+<body>
+
+<section class="sec mysection1">
+    jQuery is a JavaScript library designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animation, and Ajax. It is free, open-source software using the permissive MIT License. As of May 2019, jQuery is used by 73% of the 10 million most popular websites.
+</section>
+<section class="sec mysection2"></section>
+<section class="sec mysection3"></section>
+<section class="sec mysection4"></section>
+
+<style>
+body
+{
+    background-color: lightgray;
+}
+
+.sec
+{
+    font-size: xx-large;
+    width: 1200px;
+    height: 180px;
+}
+.mysection1
+{
+    color: white;
+    background-color: blueviolet;
+}
+.mysection2
+{
+    color: white;
+    background-color: black;
+}
+
+.mysection3
+{
+    color: black;
+    background-color: peru;     
+}
+
+.mysection4
+{
+    color: white;
+    background-color: firebrick;
+}
+</style>
+<script
+			  src="https://code.jquery.com/jquery-3.4.1.js"
+			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+              crossorigin="anonymous"></script>
+              <script>
+
+                let id = 1;
+
+                $(document).ready(function() {
+                    $(document).bind("click", function(e) {
+                        if (id === 1)
+                        {
+                            $('.mysection2').html($('.mysection1').html());
+                            $('.mysection1, .mysection3, .mysection4').html('');
+                            id = 2
+                        }
+                        else if (id === 2)
+                        {
+                            $('.mysection3').html($('.mysection2').html());
+                            $('.mysection1, .mysection2, .mysection4').html('');
+                            id = 3
+                        }
+                        else if (id === 3)
+                        {
+                            $('.mysection4').html($('.mysection3').html());
+                            $('.mysection1, .mysection2, .mysection3').html('');
+                            id = 4
+                        }
+                        else if (id === 4)
+                        {
+                            $('.mysection1').html($('.mysection4').html());
+                            $('.mysection2, .mysection3, .mysection4').html('');
+                            id = 1
+                        }
+                    });
+                });
+            </script>
+</body>
+</html>
