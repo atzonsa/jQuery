@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Right click not allowed</title>
+</head>
+
+<body>
+
+<div class="mysection"></div>
+
+<style>
+body
+{
+    background-color: lightgray;
+}
+
+.mysection
+{
+    color: white;
+    font-size: xx-large;
+    background-color: blueviolet;
+    width: 500px;
+}
+</style>
+<script
+			  src="https://code.jquery.com/jquery-3.4.1.js"
+			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+              crossorigin="anonymous"></script>
+              <script>
+
+                let count = 0;
+
+                $(document).ready(function() {
+                    $(document).bind("contextmenu", function(e) {
+                        count++;
+                        if (count === 1)
+                            $('.mysection').html("<p>Right click is not allowed.</p>");
+                        else if (count === 2)
+                            $('.mysection').append("<p>I have told you already.</p>");
+                        else if (count === 3)
+                            $('.mysection').append("<p>Don't you understand, you have clicked 3 times.</p>");
+                        else if (count === 4)
+                            $('.mysection').append("<p>I rest my case.</p>");
+                        
+                        return false;
+                    });
+                });
+            
+            </script>
+</body>
+</html>
